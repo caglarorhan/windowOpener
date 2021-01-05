@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button id="windowOpenerButton">Open new window...</button>
+<script>
+    let openerButton = document.querySelector('#windowOpenerButton');
+    openerButton.addEventListener('click',()=>{
+        let  windowFeatures = "menubar=no,location=yes,resizable=yes,scrollbars=yes,status=yes";
+        let newOpenedWindow = window.open('./childWindow.html','brandNewChildWindow',windowFeatures);
+        newOpenedWindow.focus();
+    })
+</script>
+
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button id="closeMe">Close Me!</button>
+<button id="refreshMyOpener">Refresh My Opener!</button>
+<button id="refreshMyOpenerAndCloseMe">Refresh My Opener and Close Me!</button>
+
+<script>
+    let closeMe = document.querySelector('#closeMe');
+    let refreshMyOpener = document.querySelector('#refreshMyOpener');
+    let refreshMyOpenerAndCloseMe = document.querySelector('#refreshMyOpenerAndCloseMe');
+
+    closeMe.addEventListener('click',()=>{
+        window.close();
+    })
+
+    refreshMyOpener.addEventListener('click',async ()=>{
+        await window.opener.location.reload();
+        // fazla bilgi icin https://developer.mozilla.org/en-US/docs/Web/API/Window/location
+    })
+
+    refreshMyOpenerAndCloseMe.addEventListener('click',async ()=>{
+        await window.opener.location.reload();
+        await window.close();
+    })
+
+</script>
+
+</body>
+</html>
